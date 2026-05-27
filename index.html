@@ -1,1 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professor Orientador Online</title>
+  <meta name="description" content="Orientação acadêmica online, formatação ABNT, revisão acadêmica e suporte metodológico personalizado.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #1f2937;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+      padding: 80px 0;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .green {
+      color: #4ade80;
+    }
+
+    .blue {
+      color: #93c5fd;
+    }
+
+    .hero p {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #d1d5db;
+    }
+
+    .buttons {
+      margin-top: 35px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 16px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-whatsapp {
+      background: #22c55e;
+      color: white;
+    }
+
+    .btn-whatsapp:hover {
+      background: #16a34a;
+    }
+
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #0f172a;
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 24px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h3 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .section-title p {
+      color: #6b7280;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 35px;
+      border-radius: 22px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h4 {
+      margin: 20px 0 15px;
+      font-size: 24px;
+    }
+
+    .card p {
+      color: #6b7280;
+    }
+
+    .icon {
+      font-size: 48px;
+    }
+
+    .dark-section {
+      background: #0f172a;
+      color: white;
+    }
+
+    .dark-card {
+      background: #1e293b;
+      border: 1px solid #334155;
+    }
+
+    .dark-card p {
+      color: #cbd5e1;
+    }
+
+    .cta {
+      background: #22c55e;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .cta h3 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      font-size: 20px;
+      margin-bottom: 35px;
+    }
+
+    footer {
+      background: #020617;
+      color: #94a3b8;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer h4 {
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero h2 {
+        font-size: 22px;
+      }
+
+      .section-title h3,
+      .cta h3 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="container hero-content">
+
+      <div class="hero-text">
+        <h1>Professor Orientador Online</h1>
+
+        <h2 class="green">Pagamento após entrega</h2>
+        <h2 class="blue">Correções até sua aprovação</h2>
+
+        <p>
+          Suporte acadêmico especializado para estudantes universitários que buscam orientação metodológica, revisão acadêmica, formatação ABNT e acompanhamento personalizado.
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-whatsapp" href="https://wa.me/5515991863730" target="_blank">
+            Falar no WhatsApp
+          </a>
+
+          <a class="btn btn-outline" href="#servicos">
+            Conhecer serviços
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="Orientação acadêmica">
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-title">
+        <h3>Atendimento focado no seu resultado acadêmico</h3>
+        <p>
+          Atendimento humanizado, suporte rápido e acompanhamento individual para estudantes universitários.
+        </p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">📚</div>
+          <h4>Orientação Acadêmica</h4>
+          <p>
+            Auxílio metodológico para organização estrutural e alinhamento acadêmico.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📝</div>
+          <h4>Formatação ABNT</h4>
+          <p>
+            Ajustes conforme normas acadêmicas, referências, sumário, citações e padronização.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">✅</div>
+          <h4>Correções até aprovação</h4>
+          <p>
+            Revisões e ajustes realizados até a aprovação final do material.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section dark-section" id="servicos">
+    <div class="container">
+
+      <div class="section-title">
+        <h3>Serviços disponíveis</h3>
+        <p>
+          Atendimento personalizado conforme as necessidades acadêmicas de cada estudante.
+        </p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card dark-card">
+          <h4>Revisão Acadêmica</h4>
+          <p>
+            Revisão textual, ortográfica e estrutural para maior clareza acadêmica.
+          </p>
+        </div>
+
+        <div class="card dark-card">
+          <h4>Formatação Universitária</h4>
+          <p>
+            Adequação conforme normas acadêmicas e exigências institucionais.
+          </p>
+        </div>
+
+        <div class="card dark-card">
+          <h4>Orientação Metodológica</h4>
+          <p>
+            Auxílio na organização científica e estruturação acadêmica.
+          </p>
+        </div>
+
+        <div class="card dark-card">
+          <h4>Atendimento Individual</h4>
+          <p>
+            Comunicação rápida via WhatsApp e acompanhamento personalizado.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta">
+    <h3>Precisa de orientação acadêmica?</h3>
+
+    <p>
+      Atendimento online, rápido e personalizado.
+    </p>
+
+    <a class="btn" style="background:white;color:#16a34a;" href="https://wa.me/5515991863730" target="_blank">
+      Chamar no WhatsApp
+    </a>
+  </section>
+
+  <footer>
+    <h4>Professor Orientador Online</h4>
+
+    <p>WhatsApp: (15) 99186-3730</p>
+
+    <p style="margin-top:10px; max-width:700px; margin-left:auto; margin-right:auto;">
+      Serviço de suporte acadêmico, orientação metodológica, revisão textual e formatação universitária.
+    </p>
+  </footer>
+
+</body>
+</html>
 
