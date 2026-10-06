@@ -279,6 +279,40 @@
     gtag('js', new Date());
     gtag('config', 'AW-18191028109');
   </script>
+  <!-- Conversão de contato: clique no WhatsApp -->
+  <script>
+// Registra interesse em atendimento somente ao clicar em um link do WhatsApp.
+(function () {
+  var sent = false;
+  var storageKey = 'professor-whatsapp-conversion-v1';
+
+  document.addEventListener('click', function (event) {
+    if (event.button !== 0 || !(event.target instanceof Element)) return;
+    var link = event.target.closest('a[href]');
+    if (!link) return;
+    var destination;
+    try { destination = new URL(link.href, window.location.href); }
+    catch (error) { return; }
+    if (!['wa.me', 'api.whatsapp.com', 'web.whatsapp.com'].includes(destination.hostname)) return;
+    if (sent || typeof window.gtag !== 'function') return;
+
+    var transactionId;
+    try { transactionId = sessionStorage.getItem(storageKey); }
+    catch (error) { /* O contato funciona mesmo com armazenamento indisponível. */ }
+    if (transactionId) return;
+    transactionId = 'poo-whatsapp-' + (window.crypto && typeof window.crypto.randomUUID === 'function'
+      ? window.crypto.randomUUID() : Date.now() + '-' + Math.random().toString(36).slice(2));
+
+    window.gtag('event', 'conversion', {
+      send_to: 'AW-18191028109/FbhDCPXJ47QcEI2flOJD',
+      transaction_id: transactionId
+    });
+    sent = true;
+    try { sessionStorage.setItem(storageKey, transactionId); }
+    catch (error) { /* A proteção em memória continua ativa nesta página. */ }
+  });
+})();
+  </script>
 </head>
 <body>
 
